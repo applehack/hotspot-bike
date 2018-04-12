@@ -2,11 +2,36 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8">
-    <title>now hot spot</title>
-    <link href="stylesheet/main.css" rel="stylesheet" type="text/css" media="all" />
+    <title>煮え煮えスポット</title>
+    <link href="main.css" rel="stylesheet" type="text/css" media="all" />
   </head>
   <body>
-    <h1>煮え煮えスポット</h1>
+    <h1>煮え煮えスポット(ベータ版)</h1>
     <p>今、煮えている場所が一目でわかる！</p>
+    <br>
+    <ul id="menu_1">
+      <li><a href="#">使い方</a></li>
+      <li><a href="#">注意事項</a></li>
+      <li><a href="#">ランキング</a></li>
+      <li><a href="#">写真集</a></li>
+    </ul>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcrm7d8Zz63yWXuzPTkxzEa9q1s4u3a0E&callback=initMap">
+    </script>
   </body>
 </html>
+<!-- AIzaSyDcrm7d8Zz63yWXuzPTkxzEa9q1s4u3a0E -->
